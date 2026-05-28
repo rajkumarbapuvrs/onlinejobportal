@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="allData">
+        <div class="applyLable">
+            Apply for the job
+        </div>
+    
+        <div>Company Name : {{selectedDataByStudent.companyName}}</div>   
+        <div>Salary : {{selectedDataByStudent.salary}}</div> 
+        <div>Location : {{selectedDataByStudent.location}}</div> 
+        <div>description : {{selectedDataByStudent.jobSescription}} </div> 
+    
+        <br>
+        <div>
+            How many exprience<input [(ngModel)]="exprience">
+        </div><br>
+        <div>
+            How Expected salary<input [(ngModel)]="salary">
+        </div> <br>
+        <div>
+            Current Location <input [(ngModel)]="location">
+        </div><br>
+
+        <div>
+            Add your skills <input [(ngModel)]="skills">
+        </div><br>
+    
+        <button class="submitData" (click)="sbmitData()"> Submit </button>
+        
+    </div>
+</div>

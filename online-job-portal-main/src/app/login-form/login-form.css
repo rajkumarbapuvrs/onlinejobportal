@@ -1,0 +1,123 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.registration-container{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /* background:linear-gradient(to right,#1e3c72,#2a5298); */
+}
+
+.registration-card{
+    width:380px;
+    background:antiquewhite;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.3);
+}
+
+.roleDiv{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.studentLable,
+.employerLable{
+    padding:10px 20px;
+    background:#f1f1f1;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.studentLable:hover,
+.employerLable:hover{
+    background:#1e3c72;
+    color:white;
+}
+
+.studentRegisrtionLable{
+    text-align:center;
+    font-size:26px;
+    font-weight:bold;
+    color:#1e3c72;
+    margin-bottom:10px;
+}
+
+.createLable{
+    text-align:center;
+    color:gray;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.inputSection{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.inputGroup{
+    display:flex;
+    flex-direction:column;
+}
+
+.inputGroup label{
+    margin-bottom:6px;
+    font-weight:600;
+    color:#333;
+}
+
+.inputGroup input{
+    height:42px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    padding-left:12px;
+    font-size:14px;
+    outline:none;
+    transition:0.3s;
+}
+
+.inputGroup input:focus{
+    border-color:#1e3c72;
+    box-shadow:0px 0px 5px rgba(30,60,114,0.4);
+}
+
+.submitDiv{
+    margin-top:25px;
+    display:flex;
+    justify-content:center;
+}
+
+.submitButton{
+    width:140px;
+    height:42px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(to right,#1e3c72,#2a5298);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.submitButton:hover{
+    transform:scale(1.05);
+    background:linear-gradient(to right,#2a5298,#1e3c72);
+}
+
+.error{
+    color: red;
+    font-size: 13px;
+    font-weight: 600;
+}

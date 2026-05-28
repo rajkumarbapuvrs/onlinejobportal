@@ -1,0 +1,87 @@
+
+<div class="registration-container">
+
+    <div class="registration-card">
+
+        <!-- Role Selection -->
+        <div class="roleDiv">
+
+            <div class="studentLable"
+            (click)="openFormForStudent()">
+                Student
+            </div>
+
+            <div class="employerLable"
+            (click)="openFormForEmployer()">
+                Employer
+            </div>
+
+        </div>
+
+        <!-- Heading -->
+        <div class="studentRegisrtionLable"
+        *ngIf="userRole === 'student'">
+            Student Login
+        </div>
+
+        <div class="studentRegisrtionLable"
+        *ngIf="userRole === 'employer'">
+            Employer Login
+        </div>
+
+        <p class="createLable">
+            Create your account and apply for jobs
+        </p>
+
+        <!-- Input Fields -->
+
+        <form  [formGroup]="loginForm" (ngSubmit)="submitData()">
+            <div class="inputSection">
+    
+                <div class="inputGroup">
+                    <label>Email</label>
+                    <input type="email"
+                    placeholder="Enter your email"
+                    formControlName="email">
+
+                    <span class="error" *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched">
+                        Email is required
+                    </span>
+
+                    <span class="error" *ngIf="loginForm.get('email')?.errors?.['email'] && loginForm.get('email')?.touched">
+                        Invalid Email Format
+                    </span>
+                </div>
+    
+                <div class="inputGroup">
+                    <label>Password</label>
+                    <input type="password"
+                    placeholder="Enter password"
+                    formControlName="password">
+
+                    <span class="error" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']">
+                        password is required
+                    </span>
+
+                    <span class="error" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['minlength']">
+                        Minimum 6 characters required
+                    </span>
+                </div>
+    
+            </div>
+
+            <div class="submitDiv">
+               <button class="submitButton" type="submit" [disabled]="loginForm.invalid">
+                Submit
+               </button>
+            </div>
+        </form>
+
+        <!-- Submit Button -->
+  
+
+    </div>
+
+</div>
+
+<app-view-jobs *ngIf="isLoginSucess"></app-view-jobs>

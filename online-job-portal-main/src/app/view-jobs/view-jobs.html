@@ -1,0 +1,58 @@
+<div class="searchBox">
+    <input class="input-box" type="text" placeholder="Search jobs..." [(ngModel)]="searchText" (input)="filterJobs()" />
+</div>
+
+<div class="jobContainer">
+
+    <div class="jobCard" *ngFor="let job of this.filterJobsData">
+
+        <div class="topSection">
+
+            <div class="jobTitle">
+                {{ job.jobTitle }}
+            </div>
+
+            <div class="companyName">
+                {{ job.companyName }}
+            </div>
+
+        </div>
+
+        <div class="jobInfo">
+
+            <div class="infoItem">
+                📍 {{ job.location }}
+            </div>
+
+            <div class="infoItem">
+                💰 {{ job.salary }}
+            </div>
+
+        </div>
+
+        <div class="description">
+
+            {{ job.jobSescription }}
+
+        </div>
+
+        <div class="buttonSection">
+
+            <button class="applyButton" (click)="applyForJob(job)">
+                Apply
+            </button>
+
+            <button class="detailsButton">
+                View Details
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div *ngIf="isClickedOnCard">
+    clicked on apply button
+    <app-show-job-details [jobDescription]="jobDescription"></app-show-job-details>
+</div>

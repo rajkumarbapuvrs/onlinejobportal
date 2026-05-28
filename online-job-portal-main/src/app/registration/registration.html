@@ -1,0 +1,110 @@
+<div class="registration-container">
+
+    <div class="registration-card">
+
+        <!-- Role Selection -->
+        <div class="roleDiv">
+
+            <div class="studentLable" (click)="openFormForStudent()">
+                Student
+            </div>
+
+            <div class="employerLable" (click)="openFormForEmployer()">
+                Employer
+            </div>
+
+        </div>
+
+        <!-- Heading -->
+        <div class="studentRegisrtionLable" *ngIf="userRole === 'student'">
+            Student Registration
+        </div>
+
+        <div class="studentRegisrtionLable" *ngIf="userRole === 'employer'">
+            Employer Registration
+        </div>
+
+        <p class="createLable">
+            Create your account and apply for jobs
+        </p>
+        <form #studentForm="ngForm" novalidate (ngSubmit)="submitForm(studentForm)">
+
+            <div class="inputSection">
+
+                <!-- Full Name -->
+                <div class="inputGroup">
+
+                    <label>Full Name</label>
+
+                    <input type="text" name="fullName" placeholder="Enter your name" #fullName="ngModel" minlength="3"
+                        required [(ngModel)]="student.name">
+
+                    <!-- Error Messages -->
+
+                    <span class="error" *ngIf="fullName.errors?.['required'] && fullName.touched">
+                        Full name is required
+                    </span>
+
+                    <span class="error" *ngIf="fullName.errors?.['minlength'] && fullName.touched">
+                        Minimum 3 characters required
+                    </span>
+
+                </div>
+
+                <!-- Email -->
+
+                <div class="inputGroup">
+
+                    <label>Email</label>
+
+                    <input type="email" name="email" required email #email="ngModel" placeholder="Enter your email"
+                        [(ngModel)]="student.email">
+
+                    <span class="error" *ngIf="email.errors?.['required'] && email.touched">
+                        Email is required
+                    </span>
+
+                    <span class="error" *ngIf="email.errors?.['email'] && email.touched">
+                        Invalid email format
+                    </span>
+
+                </div>
+
+                <!-- Phone -->
+
+                <div class="inputGroup">
+
+                    <label>Phone Number</label>
+
+                    <input type="text" name="phone" required pattern="^[0-9]{10}$" #phone="ngModel"
+                        placeholder="Enter phone number" [(ngModel)]="student.phoneNo">
+
+                    <span class="error" *ngIf="phone.errors?.['required'] && phone.touched">
+                        Phone number is required
+                    </span>
+
+                    <span class="error" *ngIf="phone.errors?.['pattern'] && phone.touched">
+                        Enter valid 10 digit number
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Submit Button -->
+
+            <div class="submitDiv">
+
+                <button class="submitButton" type="submit" [disabled]="studentForm.invalid">
+
+                    Submit
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

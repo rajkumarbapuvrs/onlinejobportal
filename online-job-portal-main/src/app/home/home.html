@@ -1,0 +1,31 @@
+<div class="header">
+
+    <div class="logoSection">
+        <h1 class="logo">TalentTrack</h1>
+        <p class="tagLine">Find Your Dream Job</p>
+    </div>
+
+    <div class="buttonSection" *ngIf="this.jobDataService.isLogin == false">
+
+        <button class="registrationButton"
+        (click)="openRegistrationForm()">
+            Registration
+        </button>
+
+        <button class="loginButton"
+        (click)="openLoginForm()">
+            Login
+        </button>
+    </div>
+
+</div>
+
+
+
+<!-- <div>
+    <app-registration *ngIf="showForm === 'registrationForm'"></app-registration>
+</div>
+
+<div>
+    <app-login-form *ngIf="showForm === 'loginForm'"></app-login-form>
+</div> -->

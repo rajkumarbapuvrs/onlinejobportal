@@ -1,0 +1,31 @@
+.card{
+    width: 700px;
+    height: 400px;
+    background-color: antiquewhite;
+    border: rgb(100, 98, 98) solid 2px;
+    border-radius: 5px;
+    margin-left: 30%;
+    margin-top: 50px;
+}
+
+.applyLable{
+    color: rebeccapurple;
+    font-size: 19px;
+}
+
+.submitData{
+    color: aliceblue;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgb(14, 14, 28);
+    height: 25px;
+    width: 80px;
+    border-radius: 4px;
+    margin-left: 20%;
+}
+
+
+.allData{
+    margin-left: 10%;
+    font-weight: 600;
+}
