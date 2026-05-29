@@ -6,12 +6,12 @@
         <!-- Role Selection -->
         <div class="roleDiv">
 
-            <div class="studentLable"
+            <div class="studentLabel"
             (click)="openFormForStudent()">
                 Student
             </div>
 
-            <div class="employerLable"
+            <div class="employerLabel"
             (click)="openFormForEmployer()">
                 Employer
             </div>
@@ -19,17 +19,17 @@
         </div>
 
         <!-- Heading -->
-        <div class="studentRegisrtionLable"
+        <div class="studentRegistrationLabel"
         *ngIf="userRole === 'student'">
             Student Login
         </div>
 
-        <div class="studentRegisrtionLable"
+        <div class="studentRegistrationLabel"
         *ngIf="userRole === 'employer'">
             Employer Login
         </div>
 
-        <p class="createLable">
+        <p class="createLabel">
             Create your account and apply for jobs
         </p>
 

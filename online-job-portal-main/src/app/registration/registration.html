@@ -5,26 +5,26 @@
         <!-- Role Selection -->
         <div class="roleDiv">
 
-            <div class="studentLable" (click)="openFormForStudent()">
+            <div class="studentLabel" (click)="openFormForStudent()">
                 Student
             </div>
 
-            <div class="employerLable" (click)="openFormForEmployer()">
+            <div class="employerLabel" (click)="openFormForEmployer()">
                 Employer
             </div>
 
         </div>
 
         <!-- Heading -->
-        <div class="studentRegisrtionLable" *ngIf="userRole === 'student'">
+        <div class="studentRegistrationLabel" *ngIf="userRole === 'student'">
             Student Registration
         </div>
 
-        <div class="studentRegisrtionLable" *ngIf="userRole === 'employer'">
+        <div class="studentRegistrationLabel" *ngIf="userRole === 'employer'">
             Employer Registration
         </div>
 
-        <p class="createLable">
+        <p class="createLabel">
             Create your account and apply for jobs
         </p>
         <form #studentForm="ngForm" novalidate (ngSubmit)="submitForm(studentForm)">

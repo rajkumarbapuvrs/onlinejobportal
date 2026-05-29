@@ -29,8 +29,8 @@
     margin-bottom:20px;
 }
 
-.studentLable,
-.employerLable{
+.studentLabel,
+.employerLabel{
     padding:10px 20px;
     background:#f1f1f1;
     border-radius:25px;
@@ -39,13 +39,13 @@
     transition:0.3s;
 }
 
-.studentLable:hover,
-.employerLable:hover{
+.studentLabel:hover,
+.employerLabel:hover{
     background:#1e3c72;
     color:white;
 }
 
-.studentRegisrtionLable{
+.studentRegistrationLabel{
     text-align:center;
     font-size:26px;
     font-weight:bold;
@@ -53,7 +53,7 @@
     margin-bottom:10px;
 }
 
-.createLable{
+.createLabel{
     text-align:center;
     color:gray;
     margin-bottom:25px;
