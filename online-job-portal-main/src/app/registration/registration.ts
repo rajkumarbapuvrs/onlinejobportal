@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
   templateUrl: './registration.html',
   styleUrl: './registration.css',
 })
-export class Registration {
+export class RegistrationForm {
 
   student = {
     name : '',
