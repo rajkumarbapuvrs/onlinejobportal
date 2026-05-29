@@ -27,7 +27,7 @@
         <p class="createLabel">
             Create your account and apply for jobs
         </p>
-        <form #studentForm="ngForm" novalidate (ngSubmit)="submitForm(studentForm)">
+        <form #regForm="ngForm" novalidate (ngSubmit)="submitForm(regForm)">
 
             <div class="inputSection">
 
@@ -95,7 +95,7 @@
 
             <div class="submitDiv">
 
-                <button class="submitButton" type="submit" [disabled]="studentForm.invalid">
+                <button class="submitButton" type="submit" [disabled]="regForm.invalid">
 
                     Submit
 
