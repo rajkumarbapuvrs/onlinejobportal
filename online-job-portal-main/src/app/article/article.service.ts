@@ -3,12 +3,14 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { ArticleModel } from './articleModel';
+import { CONTROLLER_NAME } from '../tokens';
 
 @Injectable({ providedIn: 'root' })
 export class ArticleService {
+    private controllerName = inject(CONTROLLER_NAME); 
   private http = inject(HttpClient);
-  private apiUrl ='https://localhost:7168/api/Articles';
-
+  private apiUrl ='https://localhost:7168/api/' + this.controllerName;
+  
   fetchData(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }

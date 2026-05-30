@@ -5,11 +5,14 @@ import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { JobDetails } from '../job-details/job-details';
 import { Jobdata } from '../job-data-service';
-
+import { CONTROLLER_NAME } from '../tokens';
 
 @Component({
   selector: 'app-home',
   imports: [NgIf],
+  providers: [
+      { provide: CONTROLLER_NAME, useValue: '' }
+    ],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

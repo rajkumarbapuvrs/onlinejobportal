@@ -1,9 +1,13 @@
 import { Component, inject, signal, OnInit } from '@angular/core';
 import { ArticleService } from '../article/article.service';
 import { ArticleModel } from '../article/articleModel';
+import { CONTROLLER_NAME } from '../tokens';
 @Component({
   selector: 'app-article',
   imports: [],
+  providers: [ArticleService,
+    { provide: CONTROLLER_NAME, useValue: 'articles' }
+  ],
   templateUrl: './article.html',
   styleUrl: './article.css',
 })
@@ -18,7 +22,7 @@ export class ArticleComponent {
       console.log("articles-----", this.articles);
     });
 
-    this.articleService.saveData({id:0,title:'A',category:'AD'}).subscribe(data => {
+    /*this.articleService.saveData({id:0,title:'A',category:'AD'}).subscribe(data => {
       var d=data;
     });
 
@@ -28,6 +32,6 @@ export class ArticleComponent {
 
     this.articleService.deleteData(10).subscribe(data => {
       var d=data;
-    });
+    });*/
   }
 }

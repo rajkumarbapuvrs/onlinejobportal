@@ -1,18 +1,27 @@
 import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component,inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ViewJobs } from '../view-jobs/view-jobs';
 import { Router } from '@angular/router';
 import { Jobdata } from '../job-data-service';
+import { LoginService } from '../login-form/login.service';
+import { CONTROLLER_NAME } from '../tokens';
+import { UserModel } from '../userModel';
+import { RegisterationService } from '../registration/registration.service';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-login-form',
   imports: [FormsModule, ReactiveFormsModule, NgIf, ViewJobs],
+   providers: [LoginService,
+      { provide: CONTROLLER_NAME, useValue: 'login' }
+    ],
   templateUrl: './login-form.html',
   styleUrl: './login-form.css',
 })
 export class LoginForm {
-
+    private loginService = inject(LoginService);
+private localStorageService = inject(LocalStorageService)
   name="";
   email="";
   phoneNo ="";
@@ -32,7 +41,7 @@ export class LoginForm {
        
       password:[ '',
         [Validators.required,
-        Validators.minLength(6)]
+        Validators.minLength(3)]
       ]
 
     })
@@ -48,16 +57,22 @@ export class LoginForm {
   }
 
   submitData(){
-    console.log("inside submit", this.loginForm)
-    if(this.loginForm.valid){
-      console.log(this.loginForm.value);
-      this.isLoginSucess = true;
-      alert('Login Successful');
-      this.jobDataService.isLogin = false;
-      this.router.navigate(['/view-jobs']);
-    }else{
-      alert('Form invalid');
+    if(this.loginForm.valid)
+    {
+      this.loginService.login(this.loginForm.value).subscribe({
+      next: (response) => {
+        this.localStorageService.setItem('appToken',response['token']);
+        this.router.navigate(['/article']);
+      },
+      error: (err) => {
+        console.error('An error occurred:', err);
+      }
+      });
     }
-  }
-
+    else
+    {
+      alert('Form is invalid')
+    }
+    console.log("Here the student name", this.loginForm.value);
+    }
 }
