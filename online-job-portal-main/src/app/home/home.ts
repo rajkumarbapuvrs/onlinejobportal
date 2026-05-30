@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 //import { Registration } from '../registration/registration';
 //import { LoginForm } from '../login-form/login-form';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { JobDetails } from '../job-details/job-details';
 import { Jobdata } from '../job-data-service';
+
 
 @Component({
   selector: 'app-home',
@@ -20,9 +21,8 @@ export class Home implements OnInit {
 
   ngOnInit(): void {
     let allData = this.jobDataService.getJobDetails();
-    console.log("Inside Home component-----", allData)
+    console.log("Inside Home component-----", allData);
   }
-
 
   openRegistrationForm(){
     this.showForm = "registrationForm";
@@ -35,5 +35,9 @@ export class Home implements OnInit {
     this.router.navigate(['/login']);
     console.log("Login button was clicked")
   }
-
+  openArticle(){
+    this.showForm = "articleComponent";
+    this.router.navigate(['/article']);
+    console.log("Article button was clicked")
+  }
 }
