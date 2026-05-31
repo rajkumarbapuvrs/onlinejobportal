@@ -61,8 +61,15 @@ private localStorageService = inject(LocalStorageService)
     {
       this.loginService.login(this.loginForm.value).subscribe({
       next: (response) => {
-        this.localStorageService.setItem('appToken',response['token']);
-        this.router.navigate(['/article']);
+        this.localStorageService.setItem('user',response);
+        if(this.userRole == "employee")
+        {
+          this.router.navigate(['/joblist']);
+        }
+        else
+        {
+          this.router.navigate(['/joblist']);
+        }
       },
       error: (err) => {
         console.error('An error occurred:', err);

@@ -8,7 +8,8 @@ import { Home } from './home/home';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Home,AgGridAngular],
+  // imports: [RouterOutlet, Home,AgGridAngular],
+  imports: [RouterOutlet, Home],
     templateUrl: './app.html',
   styleUrl: './app.css'
 })

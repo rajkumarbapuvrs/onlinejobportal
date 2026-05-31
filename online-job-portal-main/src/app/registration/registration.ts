@@ -43,10 +43,20 @@ export class RegistrationForm {
 
   submitForm(form:any){
     if(form.valid){
-      this.registrationService.register(form.value).subscribe({
+      const clonedValue = JSON.parse(JSON.stringify(form.value));
+      if(this.userRole == "employee")
+      {
+        clonedValue.isEmployee=true;
+      }
+      else
+      {
+        clonedValue.isEmployee=false;
+      }
+      this.registrationService.register(clonedValue).subscribe({
       next: (response) => {
-        this.localStorageService.setItem('appToken',response['token']);
-        console.log('Post created successfully!', response['token']);
+        this.localStorageService.setItem('user',response);
+        //this.localStorageService.setItem('appToken',response['token']);
+        console.log('Successfully Registered!', response['token']);
         this.router.navigate(['/article']);
       },
       error: (err) => {
