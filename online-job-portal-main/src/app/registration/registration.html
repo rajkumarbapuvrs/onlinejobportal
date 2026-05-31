@@ -5,8 +5,8 @@
         <!-- Role Selection -->
         <div class="roleDiv">
 
-            <div class="studentLabel" (click)="openFormForStudent()">
-                Student
+            <div class="employeeLabel" (click)="openFormForEmployee()">
+                Employee
             </div>
 
             <div class="employerLabel" (click)="openFormForEmployer()">
@@ -16,11 +16,11 @@
         </div>
 
         <!-- Heading -->
-        <div class="studentRegistrationLabel" *ngIf="userRole === 'student'">
-            Student Registration
+        <div class="employeeRegistrationLabel" *ngIf="userRole === 'employee'">
+            Employee Registration
         </div>
 
-        <div class="studentRegistrationLabel" *ngIf="userRole === 'employer'">
+        <div class="employeeRegistrationLabel" *ngIf="userRole === 'employer'">
             Employer Registration
         </div>
 

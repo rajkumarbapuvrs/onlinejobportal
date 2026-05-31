@@ -4,5 +4,5 @@ export interface UserModel {
     email: string; 
     password: string; 
     phone: string; 
-    isStudent: boolean; 
+    isEmployee: boolean; 
 } 

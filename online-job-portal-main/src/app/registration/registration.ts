@@ -26,14 +26,14 @@ export class RegistrationForm {
     email: '',
     password: '', 
     phone: '',
-    isStudent: false 
+    isEmployee: false 
   };
-  userRole = "student"
+  userRole = "employee"
   submitEnable = false;
   constructor(private router : Router){}
-  openFormForStudent(){
-    this.userRole = "student"
-    console.log("student roll has been selected")
+  openFormForEmployee(){
+    this.userRole = "employee"
+    console.log("employee roll has been selected")
   }
 
   openFormForEmployer(){
@@ -59,7 +59,7 @@ export class RegistrationForm {
     }else{
       alert('Form is invalid')
     }
-    console.log("Here the student name", this.user);
+    console.log("Here the employee name", this.user);
   }
 
 }

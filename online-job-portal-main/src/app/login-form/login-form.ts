@@ -25,7 +25,7 @@ private localStorageService = inject(LocalStorageService)
   name="";
   email="";
   phoneNo ="";
-  userRole = "student";
+  userRole = "employee";
 
   isLoginSucess = false;
 
@@ -48,8 +48,8 @@ private localStorageService = inject(LocalStorageService)
 
   }
 
-  openFormForStudent(){
-    this.userRole = "student"
+  openFormForEmployee(){
+    this.userRole = "employee"
   }
 
   openFormForEmployer(){
@@ -73,6 +73,6 @@ private localStorageService = inject(LocalStorageService)
     {
       alert('Form is invalid')
     }
-    console.log("Here the student name", this.loginForm.value);
+    console.log("Here the employee name", this.loginForm.value);
     }
 }
