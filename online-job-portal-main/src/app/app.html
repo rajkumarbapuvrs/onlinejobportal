@@ -1,2 +1,11 @@
 <app-home></app-home>
+<div class="ag-theme-quartz" style="height: 400px; width: 100%;display:grid;">
+      <ag-grid-angular
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        [editType]="editType"
+        [suppressClickEdit]="true"
+        (gridReady)="onGridReady($event)">
+      </ag-grid-angular>
+    </div>
 <router-outlet></router-outlet>

@@ -1,0 +1,22 @@
+<h1>Job Listing!</h1>
+
+<div class="crud-container">
+  <h2>AG Grid CRUD Operations</h2>
+  
+  <!-- Control Buttons -->
+  <div class="button-bar">
+    <button class="btn btn-add" (click)="addRow()">➕ Add Product</button>
+    <button class="btn btn-delete" (click)="deleteSelectedRow()">🗑️ Delete Selected</button>
+  </div>
+
+  <!-- AG Grid Component -->
+  <ag-grid-angular
+    style="width: 100%; height: 400px;"
+    [rowData]="rowData"
+    [columnDefs]="colDefs"
+    [defaultColDef]="defaultColDef"
+    [rowSelection]="rowSelection"
+    (gridReady)="onGridReady($event)"
+    (cellValueChanged)="onCellValueChanged($event)">
+  </ag-grid-angular>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit,ViewChild} from '@angular/core';
 //import { Registration } from '../registration/registration';
 //import { LoginForm } from '../login-form/login-form';
 import { NgIf } from '@angular/common';
@@ -17,7 +17,8 @@ import { CONTROLLER_NAME } from '../tokens';
   styleUrl: './home.css',
 })
 export class Home implements OnInit {
-
+  
+  name = 'Angular';
   showForm = "registrationForm";
 
   constructor(private router : Router, public jobDataService : Jobdata){}
@@ -32,7 +33,16 @@ export class Home implements OnInit {
     this.router.navigate(['/registration']);
     console.log("Resistration button was clicked");
   }
-
+openJobEdit(){
+   this.showForm = "jobedit";
+    this.router.navigate(['/jobedit']);
+    console.log("jobedit button was clicked");
+}
+openJobList(){
+  this.showForm = "joblist";
+    this.router.navigate(['/joblist']);
+    console.log("jobedit button was clicked");
+}
   openLoginForm(){
     this.showForm = "loginForm";
     this.router.navigate(['/login']);
@@ -43,4 +53,5 @@ export class Home implements OnInit {
     this.router.navigate(['/article']);
     console.log("Article button was clicked")
   }
+  
 }
