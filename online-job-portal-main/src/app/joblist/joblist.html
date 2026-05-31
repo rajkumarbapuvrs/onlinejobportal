@@ -1,0 +1,26 @@
+<h1>Job Listing!</h1>
+
+<div class="crud-container">
+  <!-- <h2>AG Grid CRUD Operations</h2> -->
+  
+  <!-- Control Buttons -->
+  <div class="button-bar">
+    <button class="btn btn-add" (click)="addRow()">➕ Add Job</button>
+    <button class="btn btn-add" (click)="saveRow()">💾 Save Job</button>
+    <button class="btn btn-delete" (click)="deleteSelectedRow()">🗑️ Delete Job</button>
+  </div>
+
+  <!-- AG Grid Component [paginationAutoPageSize]="true"  [paginationPageSize]="2"-->
+  <ag-grid-angular
+    style="width: 100%; height: 400px;"
+    [rowData]="rowData"
+    [columnDefs]="colDefs"
+    [defaultColDef]="defaultColDef"
+    [rowSelection]="rowSelection"
+    [paginationPageSizeSelector]="pageSizeOptions"
+   [paginationPageSize]="20"
+    [pagination]="true"
+    (gridReady)="onGridReady($event)"
+    (cellValueChanged)="onCellValueChanged($event)">
+  </ag-grid-angular>
+</div>

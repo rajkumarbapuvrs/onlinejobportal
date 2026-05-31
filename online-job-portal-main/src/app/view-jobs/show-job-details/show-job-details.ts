@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class ShowJobDetails implements OnInit {
 
   @Input() jobDescription: any;
-  selectedDataByStudent:any;
+  selectedDataByEmployee:any;
   exprience:any;
   salary:any;
   location:any;
@@ -27,7 +27,7 @@ export class ShowJobDetails implements OnInit {
     }
 
     console.log("Here the showjobDat", this.jobData.seletedJobData);
-    this.selectedDataByStudent = this.jobData.seletedJobData
+    this.selectedDataByEmployee = this.jobData.seletedJobData
     this.cdr.detectChanges();
 
   }
