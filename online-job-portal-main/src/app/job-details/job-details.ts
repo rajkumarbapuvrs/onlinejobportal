@@ -8,10 +8,10 @@ import { ChangeDetectorRef, Component, Input, input, OnInit } from '@angular/cor
 })
 export class JobDetails implements OnInit {
 
-  @Input()  jobDescription : any;
-  constructor(private cdr : ChangeDetectorRef){}
-  
-  ngOnInit(){
+  @Input() jobDescription: any;
+  constructor(private cdr: ChangeDetectorRef) { }
+
+  ngOnInit() {
     console.log("Here is the job data--------------", this.jobDescription);
     this.cdr.detectChanges();
   }

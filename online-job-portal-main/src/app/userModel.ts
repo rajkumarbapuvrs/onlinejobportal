@@ -1,8 +1,8 @@
 export interface UserModel {
     id: number;
-    fullName: string; 
-    email: string; 
-    password: string; 
-    phone: string; 
-    isEmployee: boolean; 
+    fullName: string;
+    email: string;
+    password: string;
+    phone: string;
+    isEmployee: boolean;
 } 

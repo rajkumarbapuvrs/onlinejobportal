@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
 import { ICellRendererParams } from 'ag-grid-community';
-import { NgIf } from '@angular/common'; 
+import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-action-buttons',
   standalone: true,
-    imports: [NgIf],  
+  imports: [NgIf],
   template: `
     <div class="action-buttons-container">
       <!-- Standard Mode -->

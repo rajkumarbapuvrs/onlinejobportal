@@ -10,7 +10,7 @@ describe('Jobedit', () => {
     await TestBed.configureTestingModule({
       imports: [Jobedit]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(Jobedit);
     component = fixture.componentInstance;

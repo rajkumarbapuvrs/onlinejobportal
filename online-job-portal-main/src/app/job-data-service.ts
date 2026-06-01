@@ -5,12 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class Jobdata {
 
-  seletedJobData:any;
+  seletedJobData: any;
   isLogin = false;
-  jobDetails:any;
+  jobDetails: any;
 
 
-    getJobDetails(){
+  getJobDetails() {
     return this.jobDetails = [
 
       {
@@ -136,5 +136,5 @@ export class Jobdata {
     ];
 
   }
-  
+
 }

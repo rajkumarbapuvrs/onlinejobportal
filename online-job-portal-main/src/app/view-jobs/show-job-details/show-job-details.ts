@@ -12,17 +12,17 @@ import { Router } from '@angular/router';
 export class ShowJobDetails implements OnInit {
 
   @Input() jobDescription: any;
-  selectedDataByEmployee:any;
-  exprience:any;
-  salary:any;
-  location:any;
+  selectedDataByEmployee: any;
+  exprience: any;
+  salary: any;
+  location: any;
   skills: any;
-  constructor(private cdr : ChangeDetectorRef, public jobData : Jobdata, public router: Router){
+  constructor(private cdr: ChangeDetectorRef, public jobData: Jobdata, public router: Router) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
 
-    if(this.jobData.seletedJobData === null || this.jobData.seletedJobData == undefined || this.jobData.seletedJobData.length === 0){
+    if (this.jobData.seletedJobData === null || this.jobData.seletedJobData == undefined || this.jobData.seletedJobData.length === 0) {
       this.router.navigate(['/view-jobs']);
     }
 
@@ -32,13 +32,13 @@ export class ShowJobDetails implements OnInit {
 
   }
 
-  getJobData(){
+  getJobData() {
     console.log("Here the showjobData", this.jobData.seletedJobData);
     this.cdr.detectChanges();
   }
 
 
-  sbmitData(){
+  sbmitData() {
 
   }
 

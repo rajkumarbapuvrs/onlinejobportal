@@ -69,14 +69,14 @@
                     </span>
 
                 </div>
-                 <!-- Password -->
+                <!-- Password -->
 
                 <div class="inputGroup">
 
                     <label>Password</label>
 
-                    <input type="password" name="password" required  #password="ngModel" placeholder="Enter your password"
-                        [(ngModel)]="user.password">
+                    <input type="password" name="password" required #password="ngModel"
+                        placeholder="Enter your password" [(ngModel)]="user.password">
 
                     <span class="error" *ngIf="email.errors?.['required'] && password.touched">
                         Password is required

@@ -12,31 +12,31 @@ import { JobListComponent } from './joblist/joblist';
 export const routes: Routes = [
 
   {
-    path:'login',
-    component:LoginForm
+    path: 'login',
+    component: LoginForm
   },
   {
-    path:'registration',
-    component:RegistrationForm
-  },
-   {
-    path:'article',
-    component:ArticleComponent
+    path: 'registration',
+    component: RegistrationForm
   },
   {
-    path:'jobedit',
-    component:Jobedit
+    path: 'article',
+    component: ArticleComponent
   },
   {
-    path:'joblist',
-    component:JobListComponent
+    path: 'jobedit',
+    component: Jobedit
   },
   {
-    path:'view-jobs',
+    path: 'joblist',
+    component: JobListComponent
+  },
+  {
+    path: 'view-jobs',
     component: ViewJobs
   },
-{
-    path:'job-details',
+  {
+    path: 'job-details',
     component: ShowJobDetails
   }
 ];
