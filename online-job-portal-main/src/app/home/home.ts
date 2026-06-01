@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 //import { Registration } from '../registration/registration';
 //import { LoginForm } from '../login-form/login-form';
 import { NgIf } from '@angular/common';
@@ -11,47 +11,47 @@ import { CONTROLLER_NAME } from '../tokens';
   selector: 'app-home',
   imports: [NgIf],
   providers: [
-      { provide: CONTROLLER_NAME, useValue: '' }
-    ],
+    { provide: CONTROLLER_NAME, useValue: '' }
+  ],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home implements OnInit {
-  
+
   name = 'Angular';
   showForm = "registrationForm";
 
-  constructor(private router : Router, public jobDataService : Jobdata){}
+  constructor(private router: Router, public jobDataService: Jobdata) { }
 
   ngOnInit(): void {
     let allData = this.jobDataService.getJobDetails();
     console.log("Inside Home component-----", allData);
   }
 
-  openRegistrationForm(){
+  openRegistrationForm() {
     this.showForm = "registrationForm";
     this.router.navigate(['/registration']);
     console.log("Resistration button was clicked");
   }
-openJobEdit(){
-   this.showForm = "jobedit";
+  openJobEdit() {
+    this.showForm = "jobedit";
     this.router.navigate(['/jobedit']);
     console.log("jobedit button was clicked");
-}
-openJobList(){
-  this.showForm = "joblist";
+  }
+  openJobList() {
+    this.showForm = "joblist";
     this.router.navigate(['/joblist']);
     console.log("jobedit button was clicked");
-}
-  openLoginForm(){
+  }
+  openLoginForm() {
     this.showForm = "loginForm";
     this.router.navigate(['/login']);
     console.log("Login button was clicked")
   }
-  openArticle(){
+  openArticle() {
     this.showForm = "articleComponent";
     this.router.navigate(['/article']);
     console.log("Article button was clicked")
   }
-  
+
 }

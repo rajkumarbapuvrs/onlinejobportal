@@ -8,16 +8,16 @@ import { IS_PUBLIC_ROUTE } from '../is-public.token';
 
 @Injectable({ providedIn: 'root' })
 export class RegisterationService {
-    private controllerName = inject(CONTROLLER_NAME); 
+    private controllerName = inject(CONTROLLER_NAME);
     private http = inject(HttpClient);
-    private apiUrl ='https://localhost:7168/api/' + this.controllerName;
+    private apiUrl = 'https://localhost:7168/api/' + this.controllerName;
 
-    register(model:UserModel): Observable<UserTokenModel>{
-    const httpHeaders = new HttpHeaders({
+    register(model: UserModel): Observable<UserTokenModel> {
+        const httpHeaders = new HttpHeaders({
             'Content-Type': 'application/json',
-            'responseType': 'text' 
+            'responseType': 'text'
         });
-    return this.http.post<UserTokenModel>(this.apiUrl, model, 
-        {headers:httpHeaders,context: new HttpContext().set(IS_PUBLIC_ROUTE, true)});
-  }
+        return this.http.post<UserTokenModel>(this.apiUrl, model,
+            { headers: httpHeaders, context: new HttpContext().set(IS_PUBLIC_ROUTE, true) });
+    }
 }

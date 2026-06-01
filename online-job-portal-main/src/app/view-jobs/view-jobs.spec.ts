@@ -10,7 +10,7 @@ describe('ViewJobs', () => {
     await TestBed.configureTestingModule({
       imports: [ViewJobs]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ViewJobs);
     component = fixture.componentInstance;

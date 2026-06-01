@@ -1,116 +1,116 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.jobContainer{
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:25px;
-    padding:30px;
-    background:#f5f7fb;
+.jobContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    background: #f5f7fb;
 }
 
-.jobCard{
-    background:white;
-    border-radius:15px;
-    padding:22px;
-    box-shadow:0px 4px 12px rgba(0,0,0,0.1);
-    transition:0.3s;
-    border-left:5px solid #1e3c72;
+.jobCard {
+    background: white;
+    border-radius: 15px;
+    padding: 22px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    border-left: 5px solid #1e3c72;
 }
 
-.jobCard:hover{
-    transform:translateY(-5px);
-    box-shadow:0px 8px 20px rgba(0,0,0,0.15);
+.jobCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.topSection{
-    margin-bottom:15px;
+.topSection {
+    margin-bottom: 15px;
 }
 
-.jobTitle{
-    font-size:24px;
-    font-weight:bold;
-    color:#1e3c72;
+.jobTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e3c72;
 }
 
-.companyName{
-    color:#666;
-    font-size:15px;
-    margin-top:5px;
+.companyName {
+    color: #666;
+    font-size: 15px;
+    margin-top: 5px;
 }
 
-.jobInfo{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:18px;
-    margin-top:10px;
+.jobInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    margin-top: 10px;
 }
 
-.infoItem{
-    font-size:14px;
-    color:#444;
-    font-weight:500;
+.infoItem {
+    font-size: 14px;
+    color: #444;
+    font-weight: 500;
 }
 
-.description{
-    color:#555;
-    line-height:1.5;
-    margin-bottom:20px;
-    min-height:70px;
+.description {
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    min-height: 70px;
 }
 
-.buttonSection{
-    display:flex;
-    gap:12px;
+.buttonSection {
+    display: flex;
+    gap: 12px;
 }
 
-.applyButton{
-    flex:1;
-    height:42px;
-    border:none;
-    border-radius:8px;
-    background:linear-gradient(to right,#1e3c72,#2a5298);
-    color:white;
-    font-size:15px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
+.applyButton {
+    flex: 1;
+    height: 42px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.applyButton:hover{
-    transform:scale(1.03);
+.applyButton:hover {
+    transform: scale(1.03);
 }
 
-.detailsButton{
-    flex:1;
-    height:42px;
-    border:none;
-    border-radius:8px;
-    background:#e8edf7;
-    color:#1e3c72;
-    font-size:15px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
+.detailsButton {
+    flex: 1;
+    height: 42px;
+    border: none;
+    border-radius: 8px;
+    background: #e8edf7;
+    color: #1e3c72;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.detailsButton:hover{
-    background:#d9e2f2;
+.detailsButton:hover {
+    background: #d9e2f2;
 }
 
-.searchBox{
+.searchBox {
     margin-left: 40%;
     height: 30px;
     width: 200px;
     margin-top: 20px;
 }
 
-.input-box{
+.input-box {
     border-radius: 5px;
     height: 30px;
     width: 200px;

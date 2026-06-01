@@ -15,7 +15,7 @@ export class ArticleComponent {
   private articleService = inject(ArticleService);
   articles: Array<ArticleModel> = [];
 
-   ngOnInit(): void {
+  ngOnInit(): void {
     // CRUD for learning
     this.articleService.fetchData().subscribe(data => {
       this.articles = data;

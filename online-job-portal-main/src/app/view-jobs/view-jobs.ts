@@ -15,22 +15,22 @@ import { FormsModule } from '@angular/forms';
 export class ViewJobs implements OnInit {
 
 
-  jobDetails:any;
-  jobDescription:any;
+  jobDetails: any;
+  jobDescription: any;
   isClickedOnCard = false;
-  searchText:any;
-  filterJobsData : any;
+  searchText: any;
+  filterJobsData: any;
 
 
-  constructor(private router : Router, public jobData : Jobdata){}
+  constructor(private router: Router, public jobData: Jobdata) { }
 
-  ngOnInit(){
-   this.jobDetails = this.jobData.getJobDetails();
-   console.log("Here is the job details" , this.jobDetails);
-   this.filterJobsData = [...this.jobDetails];
+  ngOnInit() {
+    this.jobDetails = this.jobData.getJobDetails();
+    console.log("Here is the job details", this.jobDetails);
+    this.filterJobsData = [...this.jobDetails];
   }
 
-  applyForJob(jobDetails:any){
+  applyForJob(jobDetails: any) {
     this.isClickedOnCard = true;
     console.log("Here is the job description", jobDetails);
     this.jobDescription = jobDetails;
@@ -38,7 +38,7 @@ export class ViewJobs implements OnInit {
     this.router.navigate(['/job-details']);
   }
 
-  
+
   filterJobs() {
     if (!this.searchText) {
       this.filterJobsData = [...this.jobDetails];

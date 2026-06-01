@@ -7,25 +7,20 @@
 
     <div class="buttonSection" *ngIf="this.jobDataService.isLogin == false">
 
-        <button class="registrationButton"
-        (click)="openRegistrationForm()">
+        <button class="registrationButton" (click)="openRegistrationForm()">
             Registration
         </button>
 
-        <button class="loginButton"
-        (click)="openLoginForm()">
+        <button class="loginButton" (click)="openLoginForm()">
             Login
         </button>
-         <button class="articleButton"
-        (click)="openArticle()">
+        <button class="articleButton" (click)="openArticle()">
             Article
         </button>
-        <button class="articleButton"
-        (click)="openJobEdit()">
+        <button class="articleButton" (click)="openJobEdit()">
             JobEdit
         </button>
-        <button class="articleButton"
-        (click)="openJobList()">
+        <button class="articleButton" (click)="openJobList()">
             JobList
         </button>
     </div>

@@ -1,4 +1,4 @@
-import { Component,inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,61 +12,59 @@ import { Router } from '@angular/router';
   selector: 'app-registration',
   imports: [FormsModule, CommonModule, ReactiveFormsModule],
   providers: [RegisterationService,
-        { provide: CONTROLLER_NAME, useValue: 'login/register' }
-      ],
+    { provide: CONTROLLER_NAME, useValue: 'login/register' }
+  ],
   templateUrl: './registration.html',
   styleUrl: './registration.css',
 })
 export class RegistrationForm {
   private registrationService = inject(RegisterationService);
   private localStorageService = inject(LocalStorageService)
-  user: UserModel={
-    id:0,
-    fullName:'',
+  user: UserModel = {
+    id: 0,
+    fullName: '',
     email: '',
-    password: '', 
+    password: '',
     phone: '',
-    isEmployee: false 
+    isEmployee: false
   };
   userRole = "employee"
   submitEnable = false;
-  constructor(private router : Router){}
-  openFormForEmployee(){
+  constructor(private router: Router) { }
+  openFormForEmployee() {
     this.userRole = "employee"
     console.log("employee roll has been selected")
   }
 
-  openFormForEmployer(){
+  openFormForEmployer() {
     this.userRole = "employer"
     console.log("employer roll has been selected")
   }
 
-  submitForm(form:any){
-    if(form.valid){
+  submitForm(form: any) {
+    if (form.valid) {
       const clonedValue = JSON.parse(JSON.stringify(form.value));
-      if(this.userRole == "employee")
-      {
-        clonedValue.isEmployee=true;
+      if (this.userRole == "employee") {
+        clonedValue.isEmployee = true;
       }
-      else
-      {
-        clonedValue.isEmployee=false;
+      else {
+        clonedValue.isEmployee = false;
       }
       this.registrationService.register(clonedValue).subscribe({
-      next: (response) => {
-        this.localStorageService.setItem('user',response);
-        //this.localStorageService.setItem('appToken',response['token']);
-        console.log('Successfully Registered!', response['token']);
-        this.router.navigate(['/article']);
-      },
-      error: (err) => {
-        console.error('An error occurred:', err);
-      }
-    });
+        next: (response) => {
+          this.localStorageService.setItem('user', response);
+          //this.localStorageService.setItem('appToken',response['token']);
+          console.log('Successfully Registered!', response['token']);
+          this.router.navigate(['/article']);
+        },
+        error: (err) => {
+          console.error('An error occurred:', err);
+        }
+      });
       console.log('form submited successfully')
       alert('Rgistration Successful');
 
-    }else{
+    } else {
       alert('Form is invalid')
     }
     console.log("Here the employee name", this.user);
