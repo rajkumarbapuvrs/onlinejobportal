@@ -14,7 +14,7 @@ export class Jobedit {
   @ViewChild('myEditor') myEditor: any;
   private editorInstance: any;
   editor = ClassicEditor as any;
-  data: any = `<p>Hello, world!</p>`;
+  data: any = `<p>Hello, world!</p><p><i><strong>Testing 1</strong></i></p>`;
   saveArticle() {
     console.log(this.getArticleContent());
   }

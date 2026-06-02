@@ -7,6 +7,7 @@ import { RegisterationService } from '../registration/registration.service';
 import { CONTROLLER_NAME } from '../tokens';
 import { LocalStorageService } from '../local-storage.service';
 import { Router } from '@angular/router';
+import { EncryptionService } from '../en-de-crypt.service';
 
 @Component({
   selector: 'app-registration',
@@ -30,7 +31,7 @@ export class RegistrationForm {
   };
   userRole = "employee"
   submitEnable = false;
-  constructor(private router: Router) { }
+  constructor(private router: Router,private encryptionService: EncryptionService) { }
   openFormForEmployee() {
     this.userRole = "employee"
     console.log("employee roll has been selected")
@@ -52,6 +53,12 @@ export class RegistrationForm {
       }
       this.registrationService.register(clonedValue).subscribe({
         next: (response) => {
+          const originalToken = response.token;
+          debugger;
+          // 1. Encrypt token
+          const encryptedToken = this.encryptionService.encrypt(originalToken);
+          //localStorage.setItem('user_token', encryptedToken);
+          response.token=encryptedToken;
           this.localStorageService.setItem('user', response);
           //this.localStorageService.setItem('appToken',response['token']);
           console.log('Successfully Registered!', response['token']);
@@ -62,7 +69,7 @@ export class RegistrationForm {
         }
       });
       console.log('form submited successfully')
-      alert('Rgistration Successful');
+      alert('Registration Successful');
 
     } else {
       alert('Form is invalid')

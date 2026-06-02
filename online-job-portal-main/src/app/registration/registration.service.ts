@@ -5,12 +5,13 @@ import { UserModel } from '../userModel';
 import { UserTokenModel } from '../userToken';
 import { CONTROLLER_NAME } from '../tokens';
 import { IS_PUBLIC_ROUTE } from '../is-public.token';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class RegisterationService {
     private controllerName = inject(CONTROLLER_NAME);
     private http = inject(HttpClient);
-    private apiUrl = 'https://localhost:7168/api/' + this.controllerName;
+    private apiUrl = environment.apiUrl  + this.controllerName;
 
     register(model: UserModel): Observable<UserTokenModel> {
         const httpHeaders = new HttpHeaders({

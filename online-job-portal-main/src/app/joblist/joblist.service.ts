@@ -4,15 +4,19 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { JobDetail } from '../JobDetail';
 import { CONTROLLER_NAME, ROUTE_NAME } from '../tokens';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class JobListService {
     private controllerName = inject(CONTROLLER_NAME);
     private routeName = inject(ROUTE_NAME);
     private http = inject(HttpClient);
-    private apiUrl = 'https://localhost:7168/api/' + this.controllerName + this.routeName;
+
+    private apiUrl = environment.apiUrl  + this.controllerName + this.routeName;
+    //'https://localhost:7168/api/' + this.controllerName + this.routeName;
 
     fetchData(id: number): Observable<any[]> {
+            debugger;
         return this.http.get<any[]>(this.apiUrl + '/' + id);
     }
     saveData(model: JobDetail): Observable<JobDetail> {

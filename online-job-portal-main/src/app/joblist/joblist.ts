@@ -65,7 +65,7 @@ export class JobListComponent {
   // Grid options configuration
   public defaultColDef: ColDef = {
     flex: 1,
-    minWidth: 100,
+    minWidth: 30,
   };
 
   public rowSelection: 'single' | 'multiple' = 'single';

@@ -4,12 +4,12 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { ArticleModel } from './articleModel';
 import { CONTROLLER_NAME } from '../tokens';
-
+import { environment } from '../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class ArticleService {
     private controllerName = inject(CONTROLLER_NAME);
     private http = inject(HttpClient);
-    private apiUrl = 'https://localhost:7168/api/' + this.controllerName;
+    private apiUrl = environment.apiUrl + this.controllerName;
 
     fetchData(): Observable<any[]> {
         return this.http.get<any[]>(this.apiUrl);

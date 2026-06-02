@@ -9,6 +9,8 @@ import { CONTROLLER_NAME } from '../tokens';
 import { UserModel } from '../userModel';
 import { RegisterationService } from '../registration/registration.service';
 import { LocalStorageService } from '../local-storage.service';
+import { EncryptionService } from '../en-de-crypt.service';
+
 
 @Component({
   selector: 'app-login-form',
@@ -31,7 +33,7 @@ export class LoginForm {
 
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, public jobDataService: Jobdata) {
+  constructor(private fb: FormBuilder, private router: Router, public jobDataService: Jobdata,private encryptionService: EncryptionService) {
     this.loginForm = this.fb.group({
 
       email: [
@@ -60,6 +62,16 @@ export class LoginForm {
     if (this.loginForm.valid) {
       this.loginService.login(this.loginForm.value).subscribe({
         next: (response) => {
+          const originalToken = response.token;
+    debugger;
+    // 1. Encrypt token
+    const encryptedToken = this.encryptionService.encrypt(originalToken);
+    //localStorage.setItem('user_token', encryptedToken);
+    response.token=encryptedToken;
+    
+
+
+
           this.localStorageService.setItem('user', response);
           if (this.userRole == "employee") {
             this.router.navigate(['/joblist']);
